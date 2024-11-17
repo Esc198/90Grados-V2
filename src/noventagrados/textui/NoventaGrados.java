@@ -5,14 +5,14 @@ import java.util.Date;
 import java.util.Scanner;
 
 import noventagrados.control.Arbitro;
+import noventagrados.control.undo.MaquinaDelTiempoConArbitros;
+import noventagrados.control.undo.MaquinaDelTiempoConJugadas;
+import noventagrados.control.undo.MecanismoDeDeshacer;
 import noventagrados.modelo.Celda;
 import noventagrados.modelo.Jugada;
 import noventagrados.modelo.Tablero;
 import noventagrados.textui.excepcion.OpcionNoDisponibleException;
 import noventagrados.util.Coordenada;
-import noventagrados.control.undo.MecanismoDeDeshacer;
-import noventagrados.control.undo.MaquinaDelTiempoConArbitros;
-import noventagrados.control.undo.MaquinaDelTiempoConJugadas;
 
 /**
  * Noventa grados en modo texto.
