@@ -36,15 +36,25 @@ public class TableroConsultor<T extends Tablero> {
 	 * @return Sentido del movimiento o null si no es válido
 	 */
 	public Sentido calcularSentido(Coordenada origen, Coordenada destino) {
-		int sentidoFilas = destino.fila() - origen.fila();
-		int sentidoColumnas = destino.columna() - origen.columna();
+		Sentido sentido = null;
+		int SentidoFilas = destino.fila() - origen.fila();
+		int SentidoColumnas = destino.columna() - origen.columna();
 
-		if (sentidoFilas == 0 && sentidoColumnas != 0) {
-			return sentidoColumnas > 0 ? Sentido.HORIZONTAL_E : Sentido.HORIZONTAL_O;
-		} else if (sentidoColumnas == 0 && sentidoFilas != 0) {
-			return sentidoFilas > 0 ? Sentido.VERTICAL_S : Sentido.VERTICAL_N;
+		if (SentidoFilas == 0 && SentidoColumnas != 0) {
+			if (SentidoColumnas > 0) {
+				sentido = Sentido.HORIZONTAL_E;
+			} else {
+				sentido = Sentido.HORIZONTAL_O;
+			}
+		} else if (SentidoColumnas == 0 && SentidoFilas != 0) {
+			if (SentidoFilas > 0) {
+				sentido = Sentido.VERTICAL_S;
+			} else {
+				sentido = Sentido.VERTICAL_N;
+			}
 		}
-		return null;
+
+		return sentido;
 	}
 
 	/**
@@ -58,7 +68,8 @@ public class TableroConsultor<T extends Tablero> {
 		if (origen.fila() != destino.fila()) {
 			return -1;
 		}
-		return Math.abs(destino.columna() - origen.columna());
+		int distancia = destino.columna() - origen.columna();
+		return (distancia >= 0) ? distancia : -distancia;
 	}
 
 	/**
@@ -72,7 +83,8 @@ public class TableroConsultor<T extends Tablero> {
 		if (origen.columna() != destino.columna()) {
 			return -1;
 		}
-		return Math.abs(destino.fila() - origen.fila());
+		int distancia = destino.fila() - origen.fila();
+		return (distancia >= 0) ? distancia : -distancia;
 	}
 
 	/**
