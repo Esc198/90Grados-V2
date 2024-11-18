@@ -2,6 +2,10 @@
 package noventagrados.control;
 
 import noventagrados.modelo.Tablero;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import noventagrados.modelo.Jugada;
 import noventagrados.modelo.Pieza;
 import noventagrados.util.Color;
@@ -54,11 +58,11 @@ public class Arbitro {
 	 * @param coordenadas Array de coordenadas donde colocar las piezas.
 	 * @param turnoActual El turno actual del juego.
 	 */
-	public void colocarPiezas(Pieza[] piezas, Coordenada[] coordenadas, Color turnoActual) {
-		for (int i = 0; i < piezas.length; i++) {
-			tablero.colocar(piezas[i], coordenadas[i]);
-		}
-		this.turno = turnoActual;
+	public void colocarPiezas(List<Pieza> piezas, List<Coordenada> coordenadas, Color turnoActual) {
+	    for (int i = 0; i < piezas.size(); i++) {
+	        tablero.colocar(piezas.get(i), coordenadas.get(i));
+	    }
+	    this.turno = turnoActual;
 	}
 
 	/**
@@ -348,6 +352,22 @@ public class Arbitro {
 		return acabada;
 	}
 
+	
+	
+	public Arbitro clonar() {
+		Tablero tableroClon = tablero.clonar();
+		Arbitro clon = new Arbitro(tableroClon);
+		clon.turno = turno;
+		clon.numeroJugada = numeroJugada;
+		clon.cajaBlancas = cajaBlancas.clonar();
+		clon.cajaNegras = cajaNegras.clonar();
+		
+		
+		return clon;
+		
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Arbitro [turno=" + turno + ", numeroJugada=" + numeroJugada + "]";

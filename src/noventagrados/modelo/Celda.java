@@ -106,6 +106,13 @@ public class Celda {
 		return pieza == null;
 	}
 
+	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(coordenada, pieza);
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -116,11 +123,6 @@ public class Celda {
 			return false;
 		Celda other = (Celda) obj;
 		return Objects.equals(coordenada, other.coordenada) && Objects.equals(pieza, other.pieza);
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(coordenada, pieza);
 	}
 
 	/**
