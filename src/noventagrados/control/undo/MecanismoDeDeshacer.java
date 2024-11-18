@@ -6,6 +6,7 @@ import java.util.Date;
 
 public interface MecanismoDeDeshacer {
 
+	
     /**
      * Devuelve un clon en profundidad del árbitro en el estado actual.
      * 
