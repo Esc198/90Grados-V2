@@ -1,5 +1,5 @@
 package noventagrados.textui.excepcion;
 
-public class OpcionNoDisponibleException {
+public class OpcionNoDisponibleException extends Exception{
 
 }
