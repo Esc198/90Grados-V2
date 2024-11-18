@@ -2,6 +2,8 @@ package noventagrados.control.undo;
 
 import noventagrados.control.Arbitro;
 import noventagrados.modelo.Jugada;
+import noventagrados.modelo.Tablero;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,38 +11,42 @@ import java.util.List;
 public class MaquinaDelTiempoConJugadas extends MecanismoDeDeshacerAbstracto {
 	private List<Jugada> historicoJugadas;
 
-	public MaquinaDelTiempoConJugadas() {
-		super();
+	public MaquinaDelTiempoConJugadas(Date date) {
+		super(date);
 		this.historicoJugadas = new ArrayList<>();
 	}
 
-	@Override
 	public Arbitro consultarArbitroActual() {
-		// TODO Auto-generated method stub
-		return null;
+	    Tablero tablero = new Tablero();
+		Arbitro arbitro = new Arbitro(tablero);
+	    arbitro.colocarPiezasConfiguracionInicial();
+		for (Jugada jugada : historicoJugadas) {
+			arbitro.empujar(jugada);
+			arbitro.cambiarTurno();
+		}
+		
+		return arbitro;
 	}
 
 	@Override
 	public int consultarNumeroJugadasEnHistorico() {
-		// TODO Auto-generated method stub
-		return 0;
+	    return historicoJugadas.size();
 	}
 
 	@Override
 	public void deshacerJugada() {
-		// TODO Auto-generated method stub
-		
+	    if (!historicoJugadas.isEmpty()) {
+	        historicoJugadas.remove(historicoJugadas.size() - 1);
+	    }
 	}
 
 	@Override
 	public void hacerJugada(Jugada jugada) {
-		// TODO Auto-generated method stub
-		
+	    historicoJugadas.add(jugada);
 	}
 
 	@Override
 	public Date obtenerFechaInicio() {
-		// TODO Auto-generated method stub
-		return null;
+	    return super.fechaInicio;
 	}
 }
