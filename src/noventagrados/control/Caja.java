@@ -9,12 +9,10 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- *
  * Clase Caja que contiene un color y una lista de piezas. Sirve para saber qué
  * piezas han sido expulsadas del tablero.
  *
  * @version 1.0
- *
  */
 public class Caja {
 
@@ -32,9 +30,9 @@ public class Caja {
 	}
 
 	/**
-	 * Método para añadir una pieza a la caja.
+	 * Añade una pieza a la caja.
 	 *
-	 * @param pieza Debe ser una pieza válida y del mismo color que la caja.
+	 * @param pieza Pieza a añadir, debe ser válida y del mismo color que la caja.
 	 */
 	public void añadir(Pieza pieza) {
 		if (pieza == null) {
@@ -47,7 +45,7 @@ public class Caja {
 	}
 
 	/**
-	 * Método para clonar la caja.
+	 * Clona la caja.
 	 *
 	 * @return Caja clonada.
 	 */
@@ -60,7 +58,7 @@ public class Caja {
 	}
 
 	/**
-	 * Método para consultar el color de la caja.
+	 * Consulta el color de la caja.
 	 *
 	 * @return Color de la caja.
 	 */
@@ -69,7 +67,7 @@ public class Caja {
 	}
 
 	/**
-	 * Método para consultar las piezas de la caja.
+	 * Consulta las piezas de la caja.
 	 *
 	 * @return Lista de piezas de la caja.
 	 */
@@ -82,7 +80,7 @@ public class Caja {
 	}
 
 	/**
-	 * Método para contar las piezas de la caja.
+	 * Cuenta las piezas de la caja.
 	 *
 	 * @return Número de piezas en la caja.
 	 */
@@ -91,7 +89,7 @@ public class Caja {
 	}
 
 	/**
-	 * Método para contar las piezas de un tipo concreto.
+	 * Cuenta las piezas de un tipo concreto.
 	 *
 	 * @param tipo Tipo de pieza.
 	 * @return Número de piezas del tipo indicado.

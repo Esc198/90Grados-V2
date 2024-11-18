@@ -3,7 +3,6 @@ package noventagrados.control;
 
 import noventagrados.modelo.Tablero;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -15,13 +14,12 @@ import noventagrados.util.Sentido;
 import noventagrados.util.TipoPieza;
 
 /**
- * Controla la lógica del juego, gestionando turnos, movimientos, y condiciones
+ * Controla la lógica del juego, gestionando turnos, movimientos y condiciones
  * de finalización de la partida.
- * 
+ *
  * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
  * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
  * @version 1.0
- *
  */
 public class Arbitro {
 
@@ -34,7 +32,7 @@ public class Arbitro {
 
 	/**
 	 * Constructor de la clase Arbitro.
-	 * 
+	 *
 	 * @param tablero El tablero de juego.
 	 */
 	public Arbitro(Tablero tablero) {
@@ -54,16 +52,16 @@ public class Arbitro {
 
 	/**
 	 * Coloca las piezas en el tablero en las coordenadas especificadas.
-	 * 
-	 * @param piezas      Array de piezas a colocar.
-	 * @param coordenadas Array de coordenadas donde colocar las piezas.
+	 *
+	 * @param piezas      Lista de piezas a colocar.
+	 * @param coordenadas Lista de coordenadas donde colocar las piezas.
 	 * @param turnoActual El turno actual del juego.
 	 */
 	public void colocarPiezas(List<Pieza> piezas, List<Coordenada> coordenadas, Color turnoActual) {
-	    for (int i = 0; i < piezas.size(); i++) {
-	        tablero.colocar(piezas.get(i), coordenadas.get(i));
-	    }
-	    this.turno = turnoActual;
+		for (int i = 0; i < piezas.size(); i++) {
+			tablero.colocar(piezas.get(i), coordenadas.get(i));
+		}
+		this.turno = turnoActual;
 	}
 
 	/**
@@ -93,7 +91,7 @@ public class Arbitro {
 
 	/**
 	 * Consulta la caja de piezas del color especificado.
-	 * 
+	 *
 	 * @param color El color de la caja a consultar.
 	 * @return La caja de piezas del color especificado.
 	 */
@@ -103,7 +101,7 @@ public class Arbitro {
 
 	/**
 	 * Consulta el número de jugada actual.
-	 * 
+	 *
 	 * @return El número de jugada actual.
 	 */
 	public int consultarNumeroJugada() {
@@ -112,7 +110,7 @@ public class Arbitro {
 
 	/**
 	 * Consulta el tablero de juego.
-	 * 
+	 *
 	 * @return Una copia del tablero de juego.
 	 */
 	public Tablero consultarTablero() {
@@ -121,7 +119,7 @@ public class Arbitro {
 
 	/**
 	 * Consulta el turno actual del juego.
-	 * 
+	 *
 	 * @return El turno actual del juego.
 	 */
 	public Color consultarTurno() {
@@ -130,7 +128,7 @@ public class Arbitro {
 
 	/**
 	 * Consulta el turno del ganador del juego.
-	 * 
+	 *
 	 * @return El color del turno del ganador, o null si no hay ganador aún.
 	 */
 	public Color consultarTurnoGanador() {
@@ -140,7 +138,7 @@ public class Arbitro {
 		} else if (cajaBlancas.contarPiezas(TipoPieza.REINA) == 0 && cajaNegras.contarPiezas(TipoPieza.REINA) != 0) {
 			ganador = Color.BLANCO;
 		}
-		TableroConsultor consultor = new TableroConsultor(tablero.clonar());
+		TableroConsultor<Tablero> consultor = new TableroConsultor<>(tablero.clonar());
 		if (consultor.estaReinaEnElCentro(Color.BLANCO)) {
 			ganador = Color.BLANCO;
 		} else if (consultor.estaReinaEnElCentro(Color.NEGRO)) {
@@ -152,12 +150,12 @@ public class Arbitro {
 
 	/**
 	 * Empuja las piezas en el tablero según la jugada especificada.
-	 * 
+	 *
 	 * @param jugada La jugada a realizar.
 	 */
 	public void empujar(Jugada jugada) {
 		Pieza[] orden = new Pieza[7];
-		TableroConsultor consultor = new TableroConsultor(tablero.clonar());
+		TableroConsultor<Tablero> consultor = new TableroConsultor<>(tablero.clonar());
 		Coordenada origen = jugada.origen().consultarCoordenada();
 		Coordenada destino = jugada.destino().consultarCoordenada();
 		Sentido sentido = consultor.calcularSentido(origen, destino);
@@ -179,7 +177,7 @@ public class Arbitro {
 
 	/**
 	 * Mueve las piezas en el tablero.
-	 * 
+	 *
 	 * @param fila         La fila de origen.
 	 * @param origen       La columna de origen.
 	 * @param destino      La columna de destino.
@@ -205,7 +203,7 @@ public class Arbitro {
 
 	/**
 	 * Consulta la pieza en la celda especificada.
-	 * 
+	 *
 	 * @param fila         La fila de la celda.
 	 * @param i            El índice de la celda.
 	 * @param esHorizontal Indica si la consulta es horizontal.
@@ -219,7 +217,7 @@ public class Arbitro {
 	/**
 	 * Coloca la pieza en la posición correcta o la añade a la caja si no puede ser
 	 * colocada.
-	 * 
+	 *
 	 * @param pieza        La pieza a colocar.
 	 * @param destino      La columna de destino.
 	 * @param fin          El índice de fin.
@@ -243,7 +241,7 @@ public class Arbitro {
 
 	/**
 	 * Actualiza el tablero con las nuevas posiciones de las piezas.
-	 * 
+	 *
 	 * @param fila         La fila de origen.
 	 * @param orden        El arreglo de piezas a mover.
 	 * @param esHorizontal Indica si el movimiento es horizontal.
@@ -262,11 +260,10 @@ public class Arbitro {
 
 	/**
 	 * Verifica si una jugada es legal.
-	 * 
+	 *
 	 * @param jugada La jugada a verificar.
 	 * @return true si la jugada es legal, false en caso contrario.
 	 */
-
 	public boolean esMovimientoLegal(Jugada jugada) {
 		boolean esLegal = true;
 
@@ -274,7 +271,7 @@ public class Arbitro {
 			esLegal = false;
 		} else {
 			Tablero clonTablero = consultarTablero();
-			TableroConsultor consultaTablero = new TableroConsultor(clonTablero);
+			TableroConsultor<Tablero> consultaTablero = new TableroConsultor<>(clonTablero);
 			Coordenada origen = jugada.origen().consultarCoordenada();
 			Coordenada destino = jugada.destino().consultarCoordenada();
 
@@ -300,15 +297,15 @@ public class Arbitro {
 
 	/**
 	 * Verifica si el movimiento es válido en el sentido especificado.
-	 * 
+	 *
 	 * @param consultaTablero El consultor del tablero.
 	 * @param origen          La coordenada de origen.
 	 * @param destino         La coordenada de destino.
 	 * @param sentido         El sentido del movimiento.
 	 * @return true si el movimiento es válido, false en caso contrario.
 	 */
-	private boolean esMovimientoEnSentidoValido(TableroConsultor consultaTablero, Coordenada origen, Coordenada destino,
-			Sentido sentido) {
+	private boolean esMovimientoEnSentidoValido(TableroConsultor<Tablero> consultaTablero, Coordenada origen,
+			Coordenada destino, Sentido sentido) {
 		boolean esValido = false;
 		int movimientoHorizontal = consultaTablero.consultarNumeroPiezasEnHorizontal(origen);
 		int movimientoVertical = consultaTablero.consultarNumeroPiezasEnVertical(origen);
@@ -325,7 +322,7 @@ public class Arbitro {
 
 	/**
 	 * Verifica si una coordenada está dentro del tablero.
-	 * 
+	 *
 	 * @param coordenada La coordenada a verificar.
 	 * @return true si la coordenada está dentro del tablero, false en caso
 	 *         contrario.
@@ -336,12 +333,12 @@ public class Arbitro {
 
 	/**
 	 * Verifica si la partida ha finalizado.
-	 * 
+	 *
 	 * @return true si la partida ha finalizado, false en caso contrario.
 	 */
 	public boolean estaFinalizadaPartida() {
 		Tablero clonTablero = consultarTablero();
-		TableroConsultor consultaTablero = new TableroConsultor(clonTablero);
+		TableroConsultor<Tablero> consultaTablero = new TableroConsultor<>(clonTablero);
 		boolean acabada = false;
 
 		if (!consultaTablero.hayReina(Color.BLANCO) || !consultaTablero.hayReina(Color.NEGRO)) {
@@ -353,8 +350,11 @@ public class Arbitro {
 		return acabada;
 	}
 
-	
-	
+	/**
+	 * Clona el objeto Arbitro.
+	 *
+	 * @return Un clon del objeto Arbitro.
+	 */
 	public Arbitro clonar() {
 		Tablero tableroClon = tablero.clonar();
 		Arbitro clon = new Arbitro(tableroClon);
@@ -362,10 +362,8 @@ public class Arbitro {
 		clon.numeroJugada = numeroJugada;
 		clon.cajaBlancas = cajaBlancas.clonar();
 		clon.cajaNegras = cajaNegras.clonar();
-		
-		
+
 		return clon;
-		
 	}
 
 	@Override
@@ -391,7 +389,5 @@ public class Arbitro {
 		return Objects.equals(cajaBlancas, other.cajaBlancas) && Objects.equals(cajaNegras, other.cajaNegras)
 				&& numeroJugada == other.numeroJugada && Objects.equals(tablero, other.tablero) && turno == other.turno;
 	}
-	
-	
-	
+
 }

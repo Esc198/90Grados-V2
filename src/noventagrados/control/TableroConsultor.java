@@ -9,11 +9,13 @@ import noventagrados.util.TipoPieza;
 import noventagrados.modelo.Pieza;
 
 /**
- * Realiza consultas sobre el estado del tablero sin modificarlo, proporcionando
- * métodos para calcular distancias y contar piezas.
+ * Proporciona métodos para realizar consultas sobre el estado del tablero sin
+ * modificarlo, incluyendo cálculos de distancias y conteo de piezas.
  *
+ * @param <T> El tipo de tablero sobre el que se realizarán las consultas.
+ * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
+ * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
  * @version 1.0
- *
  */
 public class TableroConsultor<T extends Tablero> {
 
