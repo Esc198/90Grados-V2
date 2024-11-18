@@ -5,6 +5,7 @@ import noventagrados.modelo.Tablero;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import noventagrados.modelo.Jugada;
 import noventagrados.modelo.Pieza;
@@ -366,10 +367,31 @@ public class Arbitro {
 		return clon;
 		
 	}
-	
-	
+
 	@Override
 	public String toString() {
-		return "Arbitro [turno=" + turno + ", numeroJugada=" + numeroJugada + "]";
+		return "Arbitro [tablero=" + tablero + ", turno=" + turno + ", numeroJugada=" + numeroJugada + ", cajaBlancas="
+				+ cajaBlancas + ", cajaNegras=" + cajaNegras + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cajaBlancas, cajaNegras, numeroJugada, tablero, turno);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Arbitro other = (Arbitro) obj;
+		return Objects.equals(cajaBlancas, other.cajaBlancas) && Objects.equals(cajaNegras, other.cajaNegras)
+				&& numeroJugada == other.numeroJugada && Objects.equals(tablero, other.tablero) && turno == other.turno;
+	}
+	
+	
+	
 }
