@@ -161,6 +161,10 @@ public class NoventaGrados {
 		// COMPLETAR POR EL ALUMNADO
 		// OBLIGATORIO COMPLETAR EL CUERPO DEL MÉTODO
 
+		if (args.length != 1) {
+			throw new OpcionNoDisponibleException("Número de argumentos incorrecto.");
+		}
+		configuracion = args[0];
 	}
 
 	/**
