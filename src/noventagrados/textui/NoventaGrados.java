@@ -160,6 +160,8 @@ public class NoventaGrados {
 	private static void extraerModoDeshacer(String[] args) throws OpcionNoDisponibleException {
 		// COMPLETAR POR EL ALUMNADO
 		// OBLIGATORIO COMPLETAR EL CUERPO DEL MÉTODO
+		
+		configuracion = "jugadas";
 
 	}
 
