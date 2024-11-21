@@ -3,6 +3,7 @@ package noventagrados.control;
 
 import noventagrados.modelo.Tablero;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,8 +18,6 @@ import noventagrados.util.TipoPieza;
  * Controla la lógica del juego, gestionando turnos, movimientos y condiciones
  * de finalización de la partida.
  *
- * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
- * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
  * @version 1.0
  */
 public class Arbitro {
@@ -154,7 +153,10 @@ public class Arbitro {
 	 * @param jugada La jugada a realizar.
 	 */
 	public void empujar(Jugada jugada) {
-		Pieza[] orden = new Pieza[7];
+		List<Pieza> orden = new ArrayList<>(7);
+		for (int i = 0; i < 7; i++) {
+			orden.add(null);
+		}
 		TableroConsultor<Tablero> consultor = new TableroConsultor<>(tablero.clonar());
 		Coordenada origen = jugada.origen().consultarCoordenada();
 		Coordenada destino = jugada.destino().consultarCoordenada();
@@ -178,19 +180,19 @@ public class Arbitro {
 	/**
 	 * Mueve las piezas en el tablero.
 	 *
-	 * @param fila         La fila de origen.
-	 * @param origen       La columna de origen.
-	 * @param destino      La columna de destino.
+	 * @param fila         La fila de las piezas.
+	 * @param origen       La coordenada de origen.
+	 * @param destino      La coordenada de destino.
 	 * @param inicio       El índice de inicio.
 	 * @param fin          El índice de fin.
-	 * @param paso         El paso de incremento.
-	 * @param esHorizontal Indica si el movimiento es horizontal.
-	 * @param orden        El arreglo de piezas a mover.
+	 * @param paso         El tamaño del paso.
+	 * @param esHorizontal Si el movimiento es horizontal.
+	 * @param orden        La lista de piezas a mover.
 	 */
 	private void moverPiezas(int fila, int origen, int destino, int inicio, int fin, int paso, boolean esHorizontal,
-			Pieza[] orden) {
+			List<Pieza> orden) {
 		for (int i = inicio; i != origen; i += paso) {
-			orden[i] = consultarPieza(fila, i, esHorizontal);
+			orden.set(i, consultarPieza(fila, i, esHorizontal));
 		}
 		for (int i = origen; i != fin; i += paso) {
 			Pieza pieza = consultarPieza(fila, i, esHorizontal);
@@ -202,12 +204,12 @@ public class Arbitro {
 	}
 
 	/**
-	 * Consulta la pieza en la celda especificada.
+	 * Consulta una pieza en el tablero.
 	 *
-	 * @param fila         La fila de la celda.
-	 * @param i            El índice de la celda.
-	 * @param esHorizontal Indica si la consulta es horizontal.
-	 * @return La pieza en la celda especificada.
+	 * @param fila         La fila de la pieza.
+	 * @param i            La columna de la pieza.
+	 * @param esHorizontal Si el movimiento es horizontal.
+	 * @return La pieza en las coordenadas especificadas.
 	 */
 	private Pieza consultarPieza(int fila, int i, boolean esHorizontal) {
 		return esHorizontal ? tablero.consultarCelda(new Coordenada(fila, i)).consultarPieza()
@@ -215,22 +217,22 @@ public class Arbitro {
 	}
 
 	/**
-	 * Coloca la pieza en la posición correcta o la añade a la caja si no puede ser
-	 * colocada.
+	 * Coloca una pieza en el tablero.
 	 *
 	 * @param pieza        La pieza a colocar.
-	 * @param destino      La columna de destino.
+	 * @param destino      La coordenada de destino.
 	 * @param fin          El índice de fin.
-	 * @param paso         El paso de incremento.
-	 * @param orden        El arreglo de piezas a mover.
-	 * @param esHorizontal Indica si el movimiento es horizontal.
-	 * @param i            El índice de la celda.
+	 * @param paso         El tamaño del paso.
+	 * @param orden        La lista de piezas a mover.
+	 * @param esHorizontal Si el movimiento es horizontal.
+	 * @param i            El índice actual.
 	 */
-	private void colocarPieza(Pieza pieza, int destino, int fin, int paso, Pieza[] orden, boolean esHorizontal, int i) {
+	private void colocarPieza(Pieza pieza, int destino, int fin, int paso, List<Pieza> orden, boolean esHorizontal,
+			int i) {
 		boolean noColocada = true;
 		for (int j = destino; j != fin && noColocada; j += paso) {
-			if (orden[j] == null && (paso > 0 ? i <= j : i >= j)) {
-				orden[j] = pieza;
+			if (orden.get(j) == null && (paso > 0 ? i <= j : i >= j)) {
+				orden.set(j, pieza);
 				noColocada = false;
 			}
 		}
@@ -242,18 +244,18 @@ public class Arbitro {
 	/**
 	 * Actualiza el tablero con las nuevas posiciones de las piezas.
 	 *
-	 * @param fila         La fila de origen.
-	 * @param orden        El arreglo de piezas a mover.
-	 * @param esHorizontal Indica si el movimiento es horizontal.
+	 * @param fila         La fila de las piezas.
+	 * @param orden        La lista de piezas a mover.
+	 * @param esHorizontal Si el movimiento es horizontal.
 	 */
-	private void actualizarTablero(int fila, Pieza[] orden, boolean esHorizontal) {
+	private void actualizarTablero(int fila, List<Pieza> orden, boolean esHorizontal) {
 		for (int i = 0; i < 7; i++) {
 			if (esHorizontal) {
 				tablero.eliminarPieza(new Coordenada(fila, i));
-				tablero.colocar(orden[i], new Coordenada(fila, i));
+				tablero.colocar(orden.get(i), new Coordenada(fila, i));
 			} else {
 				tablero.eliminarPieza(new Coordenada(i, fila));
-				tablero.colocar(orden[i], new Coordenada(i, fila));
+				tablero.colocar(orden.get(i), new Coordenada(i, fila));
 			}
 		}
 	}
@@ -389,5 +391,4 @@ public class Arbitro {
 		return Objects.equals(cajaBlancas, other.cajaBlancas) && Objects.equals(cajaNegras, other.cajaNegras)
 				&& numeroJugada == other.numeroJugada && Objects.equals(tablero, other.tablero) && turno == other.turno;
 	}
-
 }
