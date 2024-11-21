@@ -70,10 +70,49 @@ public class NoventaGrados {
 	 * 
 	 * @param args argumentos de entrada en línea de comandos
 	 */
+
 	public static void main(String[] args) {
+		
 		// COMPLETAR POR EL ALUMNADO
 		// REUTILIZAR AQUELLOS MÉTODOS YA PROPORCIONADOS QUE SEAN NECESARIOS
 		// OBLIGATORIO INCLUIR TRATAMIENTO DE EXCEPCIONES ASEGURANDO ROBUSTEZ
+		
+	    boolean exit = false;
+	    try {
+	        extraerModoDeshacer(args);
+	        inicializarPartida();
+	        mostrarMensajeBienvenida();
+	        while (!exit) {
+	            mostrarTablero();
+	            String jugadaTexto = recogerTextoDeJugadaPorTeclado();
+	            if (comprobarSalir(jugadaTexto)) {
+	                finalizarPartida();
+	                exit = true;
+	            } else if (comprobarDeshacer(jugadaTexto)) {
+	                deshacerJugada();
+	            } else if (!validarFormato(jugadaTexto)) {
+	                mostrarErrorEnFormatoDeEntrada();
+	            } else {
+	                Jugada jugada = extraerJugada(jugadaTexto);
+	                if (!esLegal(jugada)) {
+	                    mostrarErrorPorMovimientoIlegal(jugadaTexto);
+	                } else {
+	                    realizarEmpujón(jugada);
+	                    if (comprobarFinalizacionPartida()) {
+	                        mostrarGanador();
+	                        finalizarPartida();
+	                        exit = true;
+	                    } else {
+	                        cambiarTurnoPartida();
+	                    }
+	                }
+	            }
+	        }
+	    } catch (OpcionNoDisponibleException ex) {
+	        mostrarErrorSeleccionandoModo();
+	    } catch (RuntimeException ex) {
+	        mostrarErrorInterno(ex);
+	    }
 	}
 
 	/**
@@ -122,6 +161,10 @@ public class NoventaGrados {
 		// COMPLETAR POR EL ALUMNADO
 		// OBLIGATORIO COMPLETAR EL CUERPO DEL MÉTODO
 
+		if (args.length != 1) {
+			throw new OpcionNoDisponibleException("Número de argumentos incorrecto.");
+		}
+		configuracion = args[0];
 	}
 
 	/**
@@ -361,4 +404,5 @@ public class NoventaGrados {
 			System.out.println("\nEmpate con ambas reinas empujadas fuera del tablero.");
 		}
 	}
+	
 }
