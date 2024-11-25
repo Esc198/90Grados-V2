@@ -160,7 +160,7 @@ public class Tablero {
      * @param coordenada la coordenada de la celda a obtener.
      * @return la celda correspondiente, o {@code null} si la coordenada es inválida.
      */
-    Celda obtenerCelda(Coordenada coordenada) {
+    public Celda obtenerCelda(Coordenada coordenada) {
         if (coordenada == null || !estaEnTablero(coordenada)) {
             return null;
         }
