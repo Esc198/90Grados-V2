@@ -5,8 +5,3 @@ La ejecución en modo texto funciona en principio pero no la hemos probado de fo
 En cambio, el modo grafico es el que hemos usado más, ya que es más comodo, y no hemos encontrado errores.
 Javadoc no da ningun error ni warning.
 
-
-Hemos ayudado a los grupos compuestos por Lucía Vázquez y Pablo, Miguel Ángel García y Francisco Diarte, al grupo de Alexandru Bujanca.
-Esto se realiza para prevenir el plagio, siguiendo la indicación de registrar cualquier colaboración. 
-Si se encuentran similitudes, es por esta razón.
-s
