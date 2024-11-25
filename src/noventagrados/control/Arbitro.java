@@ -18,7 +18,7 @@ import noventagrados.util.TipoPieza;
  * Controla la lógica del juego, gestionando turnos, movimientos y condiciones
  * de finalización de la partida.
  *
- * @version 1.0
+ * @version 2.0
  */
 public class Arbitro {
 

@@ -12,7 +12,7 @@ import java.util.Objects;
  * Clase Caja que contiene un color y una lista de piezas. Sirve para saber qué
  * piezas han sido expulsadas del tablero.
  *
- * @version 1.0
+ * @version 2.0
  */
 public class Caja {
 

@@ -11,6 +11,10 @@ import java.util.Date;
  * @version 1.0
  */
 public abstract class MecanismoDeDeshacerAbstracto implements MecanismoDeDeshacer {
+	
+	/**
+	 * Fecha de creación del mecanismo de deshacer.
+     */
 	protected Date fechaInicio;
 
 	/**

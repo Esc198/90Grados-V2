@@ -15,7 +15,7 @@ import noventagrados.util.Coordenada;
  * 
  * @author Enrique Saiz (<a href="mailto:esc1007@alu.ubu.es">esc1007@alu.ubu.es</a>)
  * @author Mario Alonso (<a href="mailto:mal1030@alu.ubu.es">mal1030@alu.ubu.es</a>)
- * @version 1.0
+ * @version 2.0
  */
 public class Tablero {
 

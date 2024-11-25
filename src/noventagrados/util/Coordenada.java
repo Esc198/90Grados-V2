@@ -9,7 +9,7 @@ package noventagrados.util;
  *
  * @param fila    fila de la coordenada
  * @param columna columna de la coordenada
- * @version 1.0
+ * @version 2.0
  * 
  */
 public record Coordenada(int fila, int columna) {
