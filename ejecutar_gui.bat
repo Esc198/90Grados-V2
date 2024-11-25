@@ -10,7 +10,7 @@
 ::
 
 :: Ejecución del juego con la interfaz gráfica 
-java -cp ./bin;./lib/noventagrados-gui-lib-2.0.0.jar noventagrados.gui.NoventaGrados arbitros
+java -cp ./bin;./lib/noventagrados-gui-lib-2.0.2.jar noventagrados.gui.NoventaGrados arbitros
 
 :: Pausar la consola para poder ver los resultados.
 pause
