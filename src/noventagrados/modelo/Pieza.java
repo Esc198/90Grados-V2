@@ -13,10 +13,25 @@ import noventagrados.util.TipoPieza;
  * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
  * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
  * @version 2.0
+ * 
+ * @see java.util.Objects
+ * @see noventagrados.util.Color
+ * @see noventagrados.util.TipoPieza
  */
 public class Pieza {
-	// Atributos
+
+	/**
+	 * Tipo de la pieza
+	 * 
+	 * @see noventagrados.util.TipoPieza
+	 */
 	private TipoPieza tipo;
+	
+	/**
+	 * Color de la pieza
+	 * 
+	 * @see noventagrados.util.Color
+	 */
 	private Color color;
 
 	/**

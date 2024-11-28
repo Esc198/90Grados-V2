@@ -16,9 +16,21 @@ import noventagrados.modelo.Pieza;
  * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
  * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
  * @version 2.0
+ * 
+ * @see noventagrados.modelo.Tablero
+ * @see noventagrados.util.Color
+ * @see noventagrados.util.Coordenada	
+ * @see noventagrados.util.Sentido
+ * @see noventagrados.util.TipoPieza	
+ * @see noventagrados.modelo.Pieza
  */
 public class TableroConsultor<T extends Tablero> {
 
+	/**
+	 * Tablero sobre el que se realizarán las consultas
+	 * 
+	 * @see noventagrados.modelo.Tablero
+	 */
 	private T tablero;
 
 	/**

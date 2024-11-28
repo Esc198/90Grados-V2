@@ -21,6 +21,9 @@ public enum TipoPieza {
 	 */
     REINA('R');
 
+	/**
+	 * Carácter que representa el tipo de pieza
+	 */
     private char caracter;
 
     /**

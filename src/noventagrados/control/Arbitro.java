@@ -2,11 +2,6 @@
 package noventagrados.control;
 
 import noventagrados.modelo.Tablero;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 import noventagrados.modelo.Jugada;
 import noventagrados.modelo.Pieza;
 import noventagrados.util.Color;
@@ -14,19 +9,62 @@ import noventagrados.util.Coordenada;
 import noventagrados.util.Sentido;
 import noventagrados.util.TipoPieza;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 /**
- * Controla la lógica del juego, gestionando turnos, movimientos y condiciones
+ * Controla la lógica del juego, gestionando turnos, movimientos, y condiciones
  * de finalización de la partida.
- *
+ * 
+ * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
+ * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
  * @version 2.0
+ *
+ * @see noventagrados.modelo.Tablero
+ * @see oventagrados.modelo.Jugada
+ * @see noventagrados.modelo.Pieza
+ * @see noventagrados.util.Color
+ * @see noventagrados.util.Coordenada
+ * @see noventagrados.util.Sentido
+ * @see noventagrados.util.TipoPieza
+ * @see java.util.ArrayList
+ * @see java.util.List
+ * @see java.util.Objects
  */
 public class Arbitro {
 
-	// Atributos
+	/** 
+	 * El tablero de juego. 
+	 * 
+	 * @see noventagrados.modelo.Tablero
+	*/
 	private Tablero tablero;
+	
+	/**
+	 * El color del turno actual.
+	 * 
+	 * @see noventagrados.util.Color
+	 */
 	private Color turno;
+	
+	/**
+	 * El número de jugada actual.
+	 */
 	private int numeroJugada;
+	
+	/**
+	 * La caja de piezas blancas.
+	 * 
+	 * @see noventagrados.control.Caja
+	 */
 	private Caja cajaBlancas;
+	
+	/**
+	 * La caja de piezas negras.
+	 * 
+	 * @see noventagrados.control.Caja
+	 */
 	private Caja cajaNegras;
 
 	/**

@@ -13,10 +13,25 @@ import noventagrados.util.Coordenada;
  * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
  * @version 2.0
  * 
+ * @see java.util.Objects
+ * @see noventagrados.util.Color
+ * @see noventagrados.util.Coordenada
+ * 
  */
 public class Celda {
-	// Atributos
+	
+	/**
+	 * Coordenada de la celda
+	 * 
+	 * @see noventagrados.util.Coordenada
+	 */
 	private Coordenada coordenada;
+	
+	/**
+	 * Pieza de la celda
+	 * 
+	 * @see noventagrados.modelo.Pieza
+	 */
 	private Pieza pieza;
 
 	/**

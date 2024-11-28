@@ -22,9 +22,17 @@ public enum Color {
 	
 	NEGRO('N');
 
+	/**
+	 * Letra asignada al color
+	 */
 	private char letra;
 
-	Color(char letra) {
+	/**
+     * Constructor que asocia un carácter a cada tipo de pieza.
+	 * 
+	 * @param letra que se va a asignar
+	 */
+	private Color(char letra) {
 		this.letra = letra;
 	}
 

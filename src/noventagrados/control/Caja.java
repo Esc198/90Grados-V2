@@ -13,10 +13,29 @@ import java.util.Objects;
  * piezas han sido expulsadas del tablero.
  *
  * @version 2.0
+ * 
+ * @see noventagrados.modelo.Pieza
+ * @see noventagrados.util.Color
+ * @see noventagrados.util.TipoPieza
+ * @see java.util.ArrayList
+ * @see java.util.List
+ * @see java.util.Objects
  */
 public class Caja {
 
+	/**
+	 * Color de la caja.
+	 * 
+	 * @see noventagrados.util.Color
+	 */
 	private Color color;
+	
+	/**
+	 * Lista de piezas de la caja.
+	 * 
+	 * @see noventagrados.modelo.Pieza
+	 * @see java.util.ArrayList
+	 */
 	private List<Pieza> piezas;
 
 	/**

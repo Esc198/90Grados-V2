@@ -10,6 +10,10 @@ import java.util.Date;
  * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
  * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
  * @version 1.0
+ * 
+ * @see noventagrados.control.Arbitro
+ * @see noventagrados.modelo.Jugada
+ * @see java.util.Date
  */
 public interface MecanismoDeDeshacer {
 

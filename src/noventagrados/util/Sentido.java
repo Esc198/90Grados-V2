@@ -31,9 +31,22 @@ public enum Sentido {
 	 */
 	HORIZONTAL_O(0, -1);
 
+	/**
+	 * Desplazamiento en filas
+	 */
 	private int desplazamientoEnFilas;
+	
+	/**
+	 * Desplazamiento en columnas
+     */
 	private int desplazamientoEnColumnas;
 
+	/**
+	 * Constructor de Sentido
+	 * 
+	 * @param desplazamientoEnFilas    Desplazamiento en las filas
+	 * @param desplazamientoEnColumnas Desplazamiento en las columnas
+	 */
 	private Sentido(int desplazamientoEnFilas, int desplazamientoEnColumnas) {
 		this.desplazamientoEnFilas = desplazamientoEnFilas;
 		this.desplazamientoEnColumnas = desplazamientoEnColumnas;
