@@ -1,3 +1,9 @@
+/** 
+ * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
+ * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
+ * @version 1.0
+ * @since 1.0
+*/
 package noventagrados.control.undo;
 
 import noventagrados.control.Arbitro;
@@ -24,7 +30,7 @@ import java.util.List;
  * @see java.util.List
  */
 public class MaquinaDelTiempoConArbitros extends MecanismoDeDeshacerAbstracto {
-	
+
 	/**
 	 * Historial de árbitros.
 	 * 
