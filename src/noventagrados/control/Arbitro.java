@@ -22,7 +22,7 @@ import java.util.Objects;
  * @version 2.0
  *
  * @see noventagrados.modelo.Tablero
- * @see oventagrados.modelo.Jugada
+ * @see noventagrados.modelo.Jugada
  * @see noventagrados.modelo.Pieza
  * @see noventagrados.util.Color
  * @see noventagrados.util.Coordenada
