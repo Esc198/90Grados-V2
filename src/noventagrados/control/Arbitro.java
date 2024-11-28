@@ -42,7 +42,7 @@ public class Arbitro {
 	private Tablero tablero;
 
 	/**
-	 * 
+	 * El tamaño del tablero de juego.
 	 */
 	private final int TAMAÑO_TABLERO = 7;
 	/**

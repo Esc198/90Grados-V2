@@ -33,6 +33,9 @@ public class Tablero {
 	 */
 	private List<List<Celda>> celdas;
 	
+	/**
+	 * Tamaño del tablero.
+	 */
 	private final int TAMAÑO_TABLERO = 7;
 
 	/**
