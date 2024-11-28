@@ -42,6 +42,10 @@ public class Arbitro {
 	private Tablero tablero;
 	
 	/**
+	 * 
+	 */
+	private final int TAMAÑO_TABLERO = 7;
+	/**
 	 * El color del turno actual.
 	 * 
 	 * @see noventagrados.util.Color
@@ -191,8 +195,8 @@ public class Arbitro {
 	 * @param jugada La jugada a realizar.
 	 */
 	public void empujar(Jugada jugada) {
-		List<Pieza> orden = new ArrayList<>(7);
-		for (int i = 0; i < 7; i++) {
+		List<Pieza> orden = new ArrayList<>(TAMAÑO_TABLERO);
+		for (int i = 0; i < TAMAÑO_TABLERO; i++) {
 			orden.add(null);
 		}
 		TableroConsultor<Tablero> consultor = new TableroConsultor<>(tablero.clonar());
@@ -204,7 +208,7 @@ public class Arbitro {
 		boolean esVertical = sentido == Sentido.HORIZONTAL_E || sentido == Sentido.VERTICAL_S;
 
 		int inicio = esVertical ? 0 : 6;
-		int fin = esVertical ? 7 : -1;
+		int fin = esVertical ? TAMAÑO_TABLERO : -1;
 		int paso = esVertical ? 1 : -1;
 
 		if (esHorizontal) {
@@ -287,7 +291,7 @@ public class Arbitro {
 	 * @param esHorizontal Si el movimiento es horizontal.
 	 */
 	private void actualizarTablero(int fila, List<Pieza> orden, boolean esHorizontal) {
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < TAMAÑO_TABLERO; i++) {
 			if (esHorizontal) {
 				tablero.eliminarPieza(new Coordenada(fila, i));
 				tablero.colocar(orden.get(i), new Coordenada(fila, i));
@@ -368,7 +372,7 @@ public class Arbitro {
 	 *         contrario.
 	 */
 	private boolean estaDentroDelTablero(Coordenada coordenada) {
-		return coordenada.fila() >= 0 && coordenada.fila() < 7 && coordenada.columna() >= 0 && coordenada.columna() < 7;
+		return coordenada.fila() >= 0 && coordenada.fila() < TAMAÑO_TABLERO && coordenada.columna() >= 0 && coordenada.columna() < TAMAÑO_TABLERO;
 	}
 
 	/**

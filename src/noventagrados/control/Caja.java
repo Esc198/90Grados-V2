@@ -12,6 +12,8 @@ import java.util.Objects;
  * Clase Caja que contiene un color y una lista de piezas. Sirve para saber qué
  * piezas han sido expulsadas del tablero.
  *
+ * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
+ * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
  * @version 2.0
  * 
  * @see noventagrados.modelo.Pieza
@@ -37,7 +39,10 @@ public class Caja {
 	 * @see java.util.ArrayList
 	 */
 	private List<Pieza> piezas;
-
+	
+	private final int TAMAÑO_CAJA = 7;
+	
+	
 	/**
 	 * Constructor de la clase Caja.
 	 *
@@ -58,7 +63,7 @@ public class Caja {
 			return;
 		}
 		// Validar que la pieza es del color correcto
-		if (pieza.consultarColor() == this.color && piezas.size() < 7) {
+		if (pieza.consultarColor() == this.color && piezas.size() < TAMAÑO_CAJA) {
 			piezas.add(pieza);
 		}
 	}

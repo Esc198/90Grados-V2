@@ -13,10 +13,8 @@ import noventagrados.util.Coordenada;
  * Este tablero asume un tamaño fijo de 7x7 celdas.
  * </p>
  * 
- * @author Enrique Saiz
- *         (<a href="mailto:esc1007@alu.ubu.es">esc1007@alu.ubu.es</a>)
- * @author Mario Alonso
- *         (<a href="mailto:mal1030@alu.ubu.es">mal1030@alu.ubu.es</a>)
+ * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
+ * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
  * @version 2.0
  * 
  * @see noventagrados.util.Coordenada
@@ -34,6 +32,8 @@ public class Tablero {
 	 * @see java.util.ArrayList
 	 */
 	private List<List<Celda>> celdas;
+	
+	private final int TAMAÑO_TABLERO = 7;
 
 	/**
 	 * Constructor que inicializa un tablero vacío con celdas en una matriz de 7x7.
@@ -207,9 +207,9 @@ public class Tablero {
 	 * Inicializa las celdas del tablero con sus respectivas coordenadas.
 	 */
 	private void inicializarCeldas() {
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < TAMAÑO_TABLERO; i++) {
 			List<Celda> fila = new ArrayList<>();
-			for (int j = 0; j < 7; j++) {
+			for (int j = 0; j < TAMAÑO_TABLERO; j++) {
 				fila.add(new Celda(new Coordenada(i, j)));
 			}
 			celdas.add(fila);

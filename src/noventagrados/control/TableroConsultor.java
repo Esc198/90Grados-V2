@@ -33,6 +33,8 @@ public class TableroConsultor<T extends Tablero> {
 	 */
 	private T tablero;
 
+	
+
 	/**
 	 * Constructor de la clase TableroConsultor
 	 *
