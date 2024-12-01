@@ -32,9 +32,15 @@ public class Tablero {
 	 * @see java.util.ArrayList
 	 */
 	private List<List<Celda>> celdas;
+<<<<<<< HEAD
 
 	/**
 	 * Tamaño del lateral del tablero (filas o columnas).
+=======
+	
+	/**
+	 * Tamaño del tablero.
+>>>>>>> branch 'main' of https://github.com/Esc198/90Grados-V2.git
 	 */
 	private final int TAMAÑO_TABLERO = 7;
 

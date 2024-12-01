@@ -22,7 +22,7 @@ import java.util.Objects;
  * @version 2.0
  *
  * @see noventagrados.modelo.Tablero
- * @see oventagrados.modelo.Jugada
+ * @see noventagrados.modelo.Jugada
  * @see noventagrados.modelo.Pieza
  * @see noventagrados.util.Color
  * @see noventagrados.util.Coordenada
@@ -34,15 +34,19 @@ import java.util.Objects;
  */
 public class Arbitro {
 
-	/** 
-	 * El tablero de juego. 
+	/**
+	 * El tablero de juego.
 	 * 
 	 * @see noventagrados.modelo.Tablero
-	*/
+	 */
 	private Tablero tablero;
-	
+
 	/**
+<<<<<<< HEAD
 	 * Tamaño del tablero de juego.
+=======
+	 * El tamaño del tablero de juego.
+>>>>>>> branch 'main' of https://github.com/Esc198/90Grados-V2.git
 	 */
 	private final int TAMAÑO_TABLERO = 7;
 	/**
@@ -51,19 +55,19 @@ public class Arbitro {
 	 * @see noventagrados.util.Color
 	 */
 	private Color turno;
-	
+
 	/**
 	 * El número de jugada actual.
 	 */
 	private int numeroJugada;
-	
+
 	/**
 	 * La caja de piezas blancas.
 	 * 
 	 * @see noventagrados.control.Caja
 	 */
 	private Caja cajaBlancas;
-	
+
 	/**
 	 * La caja de piezas negras.
 	 * 
@@ -222,27 +226,27 @@ public class Arbitro {
 	/**
 	 * Mueve las piezas en el tablero.
 	 *
-	 * @param fila         La fila de las piezas.
-	 * @param origen       La coordenada de origen.
-	 * @param destino      La coordenada de destino.
-	 * @param inicio       El índice de inicio.
-	 * @param fin          El índice de fin.
-	 * @param paso         El tamaño del paso.
-	 * @param esHorizontal Si el movimiento es horizontal.
-	 * @param orden        La lista de piezas a mover.
+	 * @param filaOrigen     La fila de las piezas.
+	 * @param columnaOrigen  La coordenada de origen.
+	 * @param columnaDestino La coordenada de destino.
+	 * @param inicio         El índice de inicio.
+	 * @param fin            El índice de fin.
+	 * @param paso           El tamaño del paso.
+	 * @param esHorizontal   Si el movimiento es horizontal.
+	 * @param orden          La lista de piezas a mover.
 	 */
-	private void moverPiezas(int fila, int origen, int destino, int inicio, int fin, int paso, boolean esHorizontal,
-			List<Pieza> orden) {
-		for (int i = inicio; i != origen; i += paso) {
-			orden.set(i, consultarPieza(fila, i, esHorizontal));
+	private void moverPiezas(int filaOrigen, int columnaOrigen, int columnaDestino, int inicio, int fin, int paso,
+			boolean esHorizontal, List<Pieza> orden) {
+		for (int i = inicio; i != columnaOrigen; i += paso) {
+			orden.set(i, consultarPieza(filaOrigen, i, esHorizontal));
 		}
-		for (int i = origen; i != fin; i += paso) {
-			Pieza pieza = consultarPieza(fila, i, esHorizontal);
+		for (int i = columnaOrigen; i != fin; i += paso) {
+			Pieza pieza = consultarPieza(filaOrigen, i, esHorizontal);
 			if (pieza != null) {
-				colocarPieza(pieza, destino, fin, paso, orden, esHorizontal, i);
+				colocarPieza(pieza, columnaDestino, fin, paso, orden, esHorizontal, i);
 			}
 		}
-		actualizarTablero(fila, orden, esHorizontal);
+		actualizarTablero(filaOrigen, orden, esHorizontal);
 	}
 
 	/**
@@ -372,7 +376,8 @@ public class Arbitro {
 	 *         contrario.
 	 */
 	private boolean estaDentroDelTablero(Coordenada coordenada) {
-		return coordenada.fila() >= 0 && coordenada.fila() < TAMAÑO_TABLERO && coordenada.columna() >= 0 && coordenada.columna() < TAMAÑO_TABLERO;
+		return coordenada.fila() >= 0 && coordenada.fila() < TAMAÑO_TABLERO && coordenada.columna() >= 0
+				&& coordenada.columna() < TAMAÑO_TABLERO;
 	}
 
 	/**
