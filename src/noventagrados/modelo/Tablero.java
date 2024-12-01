@@ -32,7 +32,7 @@ public class Tablero {
 	 * @see java.util.ArrayList
 	 */
 	private List<List<Celda>> celdas;
-<<<<<<< HEAD
+
 
 	/**
 	 * Tamaño del lateral del tablero (filas o columnas).
