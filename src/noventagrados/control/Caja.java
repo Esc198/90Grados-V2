@@ -40,6 +40,9 @@ public class Caja {
 	 */
 	private List<Pieza> piezas;
 	
+	/**
+	 * Tamaño máximo de la caja.
+	 */
 	private final int TAMAÑO_CAJA = 7;
 	
 	

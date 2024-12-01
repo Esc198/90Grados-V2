@@ -17,7 +17,7 @@ public abstract class MecanismoDeDeshacerAbstracto implements MecanismoDeDeshace
 	/**
 	 * Fecha de creación del mecanismo de deshacer.
 	 */
-	protected Date fechaInicio;
+	private Date fechaInicio;
 
 	/**
 	 * Constructor que inicializa la fecha de inicio del mecanismo de deshacer.
@@ -27,4 +27,17 @@ public abstract class MecanismoDeDeshacerAbstracto implements MecanismoDeDeshace
 	public MecanismoDeDeshacerAbstracto(Date date) {
 		this.fechaInicio = date;
 	}
+	
+	/**
+	 * Obtiene la fecha de inicio de la máquina del tiempo.
+	 *
+	 * @return La fecha de inicio.
+	 */
+	@Override
+	public Date obtenerFechaInicio() {
+		return fechaInicio;
+	}
+	
+	
+
 }

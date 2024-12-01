@@ -3,7 +3,6 @@ package noventagrados.control.undo;
 import noventagrados.control.Arbitro;
 import noventagrados.modelo.Jugada;
 import noventagrados.modelo.Tablero;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,7 +23,7 @@ import java.util.List;
  * @see java.util.List
  */
 public class MaquinaDelTiempoConJugadas extends MecanismoDeDeshacerAbstracto {
-	
+
 	/**
 	 * Historial de jugadas.
 	 * 
@@ -90,13 +89,4 @@ public class MaquinaDelTiempoConJugadas extends MecanismoDeDeshacerAbstracto {
 		historicoJugadas.add(jugada);
 	}
 
-	/**
-	 * Obtiene la fecha de inicio de la máquina del tiempo.
-	 *
-	 * @return La fecha de inicio.
-	 */
-	@Override
-	public Date obtenerFechaInicio() {
-		return super.fechaInicio;
-	}
 }

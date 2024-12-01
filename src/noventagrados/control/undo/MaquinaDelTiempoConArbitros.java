@@ -1,9 +1,4 @@
-/** 
- * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
- * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
- * @version 1.0
- * @since 1.0
-*/
+
 package noventagrados.control.undo;
 
 import noventagrados.control.Arbitro;
@@ -100,13 +95,5 @@ public class MaquinaDelTiempoConArbitros extends MecanismoDeDeshacerAbstracto {
 		}
 	}
 
-	/**
-	 * Obtiene la fecha de inicio de la máquina del tiempo.
-	 *
-	 * @return La fecha de inicio.
-	 */
-	@Override
-	public Date obtenerFechaInicio() {
-		return super.fechaInicio;
-	}
+	
 }

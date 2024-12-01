@@ -32,7 +32,10 @@ public class Tablero {
 	 * @see java.util.ArrayList
 	 */
 	private List<List<Celda>> celdas;
-	
+
+	/**
+	 * Tamaño del lateral del tablero (filas o columnas).
+	 */
 	private final int TAMAÑO_TABLERO = 7;
 
 	/**
@@ -176,11 +179,24 @@ public class Tablero {
 	 * @return la celda correspondiente, o {@code null} si la coordenada es
 	 *         inválida.
 	 */
-	public Celda obtenerCelda(Coordenada coordenada) {
+	Celda obtenerCelda(Coordenada coordenada) {
 		if (coordenada == null || !estaEnTablero(coordenada)) {
 			return null;
 		}
 		return celdas.get(coordenada.fila()).get(coordenada.columna());
+	}
+
+	/**
+	 * Inicializa las celdas del tablero con sus respectivas coordenadas.
+	 */
+	private void inicializarCeldas() {
+		for (int i = 0; i < TAMAÑO_TABLERO; i++) {
+			List<Celda> fila = new ArrayList<>();
+			for (int j = 0; j < TAMAÑO_TABLERO; j++) {
+				fila.add(new Celda(new Coordenada(i, j)));
+			}
+			celdas.add(fila);
+		}
 	}
 
 	@Override
@@ -203,16 +219,4 @@ public class Tablero {
 		return "Tablero [celdas=" + celdas + "]";
 	}
 
-	/**
-	 * Inicializa las celdas del tablero con sus respectivas coordenadas.
-	 */
-	private void inicializarCeldas() {
-		for (int i = 0; i < TAMAÑO_TABLERO; i++) {
-			List<Celda> fila = new ArrayList<>();
-			for (int j = 0; j < TAMAÑO_TABLERO; j++) {
-				fila.add(new Celda(new Coordenada(i, j)));
-			}
-			celdas.add(fila);
-		}
-	}
 }

@@ -23,31 +23,31 @@ public interface MecanismoDeDeshacer {
      * 
      * @return Clon en profundidad del árbitro actual.
      */
-    Arbitro consultarArbitroActual();
+	public Arbitro consultarArbitroActual();
 
     /**
      * Devuelve el número de jugadas que pueden deshacerse hasta el momento.
      * 
      * @return Número de jugadas en el histórico.
      */
-    int consultarNumeroJugadasEnHistorico();
+    public int consultarNumeroJugadasEnHistorico();
 
     /**
      * Deshace la última jugada realizada.
      */
-    void deshacerJugada();
+    public void deshacerJugada();
 
     /**
      * Guarda los efectos de la última jugada realizada.
      * 
      * @param jugada La última jugada realizada.
      */
-    void hacerJugada(Jugada jugada);
+    public void hacerJugada(Jugada jugada);
 
     /**
      * Devuelve la fecha en la que se inicializa el mecanismo de deshacer.
      * 
      * @return Fecha de inicio del mecanismo de deshacer.
      */
-    Date obtenerFechaInicio();
+    public Date obtenerFechaInicio();
 }

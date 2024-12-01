@@ -1,6 +1,5 @@
 package noventagrados.textui;
 
-
 import java.util.Date;
 import java.util.Scanner;
 
@@ -72,47 +71,54 @@ public class NoventaGrados {
 	 */
 
 	public static void main(String[] args) {
-		
-		// COMPLETAR POR EL ALUMNADO
-		// REUTILIZAR AQUELLOS MÉTODOS YA PROPORCIONADOS QUE SEAN NECESARIOS
-		// OBLIGATORIO INCLUIR TRATAMIENTO DE EXCEPCIONES ASEGURANDO ROBUSTEZ
-		
-	    boolean exit = false;
-	    try {
-	        extraerModoDeshacer(args);
-	        inicializarPartida();
-	        mostrarMensajeBienvenida();
-	        while (!exit) {
-	            mostrarTablero();
-	            String jugadaTexto = recogerTextoDeJugadaPorTeclado();
-	            if (comprobarSalir(jugadaTexto)) {
-	                finalizarPartida();
-	                exit = true;
-	            } else if (comprobarDeshacer(jugadaTexto)) {
-	                deshacerJugada();
-	            } else if (!validarFormato(jugadaTexto)) {
-	                mostrarErrorEnFormatoDeEntrada();
-	            } else {
-	                Jugada jugada = extraerJugada(jugadaTexto);
-	                if (!esLegal(jugada)) {
-	                    mostrarErrorPorMovimientoIlegal(jugadaTexto);
-	                } else {
-	                    realizarEmpujón(jugada);
-	                    if (comprobarFinalizacionPartida()) {
-	                        mostrarGanador();
-	                        finalizarPartida();
-	                        exit = true;
-	                    } else {
-	                        cambiarTurnoPartida();
-	                    }
-	                }
-	            }
-	        }
-	    } catch (OpcionNoDisponibleException ex) {
-	        mostrarErrorSeleccionandoModo();
-	    } catch (RuntimeException ex) {
-	        mostrarErrorInterno(ex);
-	    }
+
+		try {
+			extraerModoDeshacer(args);
+			inicializarPartida();
+			mostrarMensajeBienvenida();
+			mostrarTablero();
+			bucle();
+			mostrarGanador();
+			finalizarPartida();
+		} catch (OpcionNoDisponibleException ex) {
+			mostrarErrorSeleccionandoModo();
+		} catch (RuntimeException ex) {
+			mostrarErrorInterno(ex);
+		}
+	}
+
+	
+	/**
+	 * Metodo que se encarga de ejecutar el juego mientras dura la partida
+	 */
+	private static void bucle() {
+		boolean salir = false;
+		while (!salir) {
+			String jugadaTexto = recogerTextoDeJugadaPorTeclado();
+			if (comprobarSalir(jugadaTexto)) {
+				salir = true;
+			} else if (comprobarDeshacer(jugadaTexto)) {
+				if (deshacer.consultarNumeroJugadasEnHistorico() > 0) {
+					deshacerJugada();
+				} else {
+					System.out.println("No hay jugadas que deshacer.");
+					mostrarTablero();
+				}
+			} else if (!validarFormato(jugadaTexto)) {
+				mostrarErrorEnFormatoDeEntrada();
+				mostrarTablero();
+			} else {
+				Jugada jugada = extraerJugada(jugadaTexto);
+				if (!esLegal(jugada)) {
+					mostrarErrorPorMovimientoIlegal(jugadaTexto);
+				} else {
+					realizarEmpujón(jugada);
+					cambiarTurnoPartida();
+					salir = comprobarFinalizacionPartida() ? true : salir;
+				}
+				mostrarTablero();
+			}
+		}
 	}
 
 	/**
@@ -154,17 +160,20 @@ public class NoventaGrados {
 	 * que jugamos. No comprueba la corrección del texto introducido.
 	 * 
 	 * @param args argumentos
-	 * @throws OpcionNoDisponibleException si el argumento con el modo de deshacer no
-	 *                                  es correcto
+	 * @throws OpcionNoDisponibleException si el argumento con el modo de deshacer
+	 *                                     no es correcto
 	 */
 	private static void extraerModoDeshacer(String[] args) throws OpcionNoDisponibleException {
 		// COMPLETAR POR EL ALUMNADO
 		// OBLIGATORIO COMPLETAR EL CUERPO DEL MÉTODO
 
-		if (args.length != 1) {
-			throw new OpcionNoDisponibleException("Número de argumentos incorrecto.");
+		configuracion = (args.length == 0) ? "jugadas" : args[0];
+		try {
+			seleccionarMecanismoDeshacer(configuracion);
+		} catch (IllegalArgumentException ex) {
+			throw new OpcionNoDisponibleException("Modo no disponible:" + configuracion, ex);
 		}
-		configuracion = args[0];
+
 	}
 
 	/**
@@ -223,7 +232,7 @@ public class NoventaGrados {
 	private static boolean comprobarSalir(String jugada) {
 		return jugada.equalsIgnoreCase(TEXTO_SALIR);
 	}
-	
+
 	/**
 	 * Comprueba si se quiere deshacer la última jugada.
 	 * 
@@ -388,7 +397,7 @@ public class NoventaGrados {
 	/**
 	 * Muestra el estado del tablero con sus piezas actuales en pantalla.
 	 */
-	private static void mostrarTablero() {		
+	private static void mostrarTablero() {
 		System.out.println();
 		System.out.println(arbitro.consultarTablero().aTexto());
 	}
@@ -404,5 +413,5 @@ public class NoventaGrados {
 			System.out.println("\nEmpate con ambas reinas empujadas fuera del tablero.");
 		}
 	}
-	
+
 }

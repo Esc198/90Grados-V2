@@ -42,7 +42,7 @@ public class Arbitro {
 	private Tablero tablero;
 	
 	/**
-	 * 
+	 * Tamaño del tablero de juego.
 	 */
 	private final int TAMAÑO_TABLERO = 7;
 	/**
@@ -412,13 +412,14 @@ public class Arbitro {
 
 	@Override
 	public String toString() {
-		return "Arbitro [tablero=" + tablero + ", turno=" + turno + ", numeroJugada=" + numeroJugada + ", cajaBlancas="
-				+ cajaBlancas + ", cajaNegras=" + cajaNegras + "]";
+		return "Arbitro [tablero=" + tablero + ", TAMAÑO_TABLERO=" + TAMAÑO_TABLERO + ", turno=" + turno
+				+ ", numeroJugada=" + numeroJugada + ", cajaBlancas=" + cajaBlancas + ", cajaNegras=" + cajaNegras
+				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(cajaBlancas, cajaNegras, numeroJugada, tablero, turno);
+		return Objects.hash(TAMAÑO_TABLERO, cajaBlancas, cajaNegras, numeroJugada, tablero, turno);
 	}
 
 	@Override
@@ -430,7 +431,10 @@ public class Arbitro {
 		if (getClass() != obj.getClass())
 			return false;
 		Arbitro other = (Arbitro) obj;
-		return Objects.equals(cajaBlancas, other.cajaBlancas) && Objects.equals(cajaNegras, other.cajaNegras)
-				&& numeroJugada == other.numeroJugada && Objects.equals(tablero, other.tablero) && turno == other.turno;
+		return TAMAÑO_TABLERO == other.TAMAÑO_TABLERO && Objects.equals(cajaBlancas, other.cajaBlancas)
+				&& Objects.equals(cajaNegras, other.cajaNegras) && numeroJugada == other.numeroJugada
+				&& Objects.equals(tablero, other.tablero) && turno == other.turno;
 	}
+
+
 }
