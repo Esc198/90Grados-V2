@@ -15,7 +15,7 @@ package noventagrados.util;
 public record Coordenada(int fila, int columna) {
 
 	/**
-	 * Devuelve la coordenada en formato texto
+	 * Devuelve la coordenada en formato texto.
 	 * 
 	 * @return String Cadena con la coordenada
 	 */

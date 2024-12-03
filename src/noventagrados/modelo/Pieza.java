@@ -21,21 +21,21 @@ import noventagrados.util.TipoPieza;
 public class Pieza {
 
 	/**
-	 * Tipo de la pieza
+	 * Tipo de la pieza.
 	 * 
 	 * @see noventagrados.util.TipoPieza
 	 */
 	private TipoPieza tipo;
 	
 	/**
-	 * Color de la pieza
+	 * Color de la pieza.
 	 * 
 	 * @see noventagrados.util.Color
 	 */
 	private Color color;
 
 	/**
-	 * Constructor de Pieza
+	 * Constructor de Pieza.
 	 * 
 	 * @param tipo  tipo de pieza
 	 * @param color color de la pieza
@@ -46,7 +46,7 @@ public class Pieza {
 	}
 
 	/**
-	 * Devuelve en texto el tipo de pieza y su color
+	 * Devuelve en texto el tipo de pieza y su color.
 	 * 
 	 * @return String texto con el tipo de pieza y su color
 	 */
@@ -56,7 +56,7 @@ public class Pieza {
 	}
 
 	/***
-	 * Devuelve un clon de la pieza
+	 * Devuelve un clon de la pieza.
 	 * 
 	 * @return Pieza clon de la pieza
 	 */
@@ -66,7 +66,7 @@ public class Pieza {
 
 	
 	/**
-	 * Consulta el color de la pieza
+	 * Consulta el color de la pieza.
 	 * 
 	 * @return Color color de la pieza
 	 */
@@ -75,7 +75,7 @@ public class Pieza {
 	}
 
 	/**
-	 * Consulta el tipo de pieza
+	 * Consulta el tipo de pieza.
 	 * 
 	 * @return TipoPieza tipo de pieza
 	 */

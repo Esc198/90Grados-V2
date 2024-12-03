@@ -13,7 +13,7 @@ package noventagrados.modelo;
  */
 public record Jugada(Celda origen, Celda destino) {
 	/**
-	 * Metodo que devuelve las coordenadas de origen y destino en formato de texto
+	 * Metodo que devuelve las coordenadas de origen y destino en formato de texto.
 	 * 
 	 * @return String texto con las coordenadas de origen y destino
 	 */

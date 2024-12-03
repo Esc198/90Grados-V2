@@ -21,21 +21,21 @@ import noventagrados.util.Coordenada;
 public class Celda {
 	
 	/**
-	 * Coordenada de la celda
+	 * Coordenada de la celda.
 	 * 
 	 * @see noventagrados.util.Coordenada
 	 */
 	private Coordenada coordenada;
 	
 	/**
-	 * Pieza de la celda
+	 * Pieza de la celda.
 	 * 
 	 * @see noventagrados.modelo.Pieza
 	 */
 	private Pieza pieza;
 
 	/**
-	 * Constructor de Celda
+	 * Constructor de Celda.
 	 * 
 	 * @param coordenada coordenada de la celda
 	 */
@@ -46,7 +46,7 @@ public class Celda {
 	}
 
 	/***
-	 * Devuelve un clon profundo de la celda
+	 * Devuelve un clon profundo de la celda.
 	 * 
 	 * @return Celda celda clonada
 	 */
@@ -62,7 +62,7 @@ public class Celda {
 	}
 
 	/***
-	 * Coloca una pieza en la celda
+	 * Coloca una pieza en la celda.
 	 * 
 	 * @param pieza pieza a colocar
 	 */
@@ -72,7 +72,7 @@ public class Celda {
 	}
 
 	/***
-	 * Consulta el color de la pieza de la celda
+	 * Consulta el color de la pieza de la celda.
 	 * 
 	 * @return Color color de la pieza de la celda. En caso de no haber pieza
 	 *         devuelve null
@@ -86,7 +86,7 @@ public class Celda {
 	}
 
 	/**
-	 * Consulta la coordenada de la celda
+	 * Consulta la coordenada de la celda.
 	 * 
 	 * @return Coordenada coordenada de la celda
 	 */
@@ -95,7 +95,7 @@ public class Celda {
 	}
 
 	/**
-	 * Consulta la pieza de la celda
+	 * Consulta la pieza de la celda.
 	 * 
 	 * @return Pieza pieza de la celda
 	 */
@@ -104,7 +104,7 @@ public class Celda {
 	}
 
 	/**
-	 * Elimina la pieza de la celda
+	 * Elimina la pieza de la celda.
 	 */
 	public void eliminarPieza() {
 
@@ -112,7 +112,7 @@ public class Celda {
 	}
 
 	/**
-	 * Comprueba si la celda está vacía
+	 * Comprueba si la celda está vacía.
 	 * 
 	 * @return boolean true si la celda está vacía, false en caso contrario
 	 */

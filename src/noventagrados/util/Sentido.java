@@ -12,37 +12,37 @@ package noventagrados.util;
 public enum Sentido {
 
 	/**
-	 * Valor de la direccion arriba y izquierda(norte)
+	 * Valor de la direccion arriba y izquierda(norte).
 	 */
 	VERTICAL_N(-1, 0), 
 	
 	/**
-	 * Valor de la direccion abajo y derecha(sur)
+	 * Valor de la direccion abajo y derecha(sur).
 	 */
 	VERTICAL_S(1, 0), 
 	
 	/**
-	 * Valor de la direccion derecha(este)
+	 * Valor de la direccion derecha(este).
 	 */
 	HORIZONTAL_E(0, 1), 
 	
 	/**
-	 * Valor de la direccion izquierda(oeste)
+	 * Valor de la direccion izquierda(oeste).
 	 */
 	HORIZONTAL_O(0, -1);
 
 	/**
-	 * Desplazamiento en filas
+	 * Desplazamiento en filas.
 	 */
 	private int desplazamientoEnFilas;
 	
 	/**
-	 * Desplazamiento en columnas
+	 * Desplazamiento en columnas.
      */
 	private int desplazamientoEnColumnas;
 
 	/**
-	 * Constructor de Sentido
+	 * Constructor de Sentido.
 	 * 
 	 * @param desplazamientoEnFilas    Desplazamiento en las filas
 	 * @param desplazamientoEnColumnas Desplazamiento en las columnas
@@ -53,7 +53,7 @@ public enum Sentido {
 	}
 
 	/**
-	 * Devuelve el desplazamiento en las filas
+	 * Devuelve el desplazamiento en las filas.
 	 * 
 	 * @return int desplazamiento en las filas
 	 */
@@ -62,7 +62,7 @@ public enum Sentido {
 	}
 
 	/**
-	 * Devuelve el desplazamiento en las columnas
+	 * Devuelve el desplazamiento en las columnas.
 	 * 
 	 * @return int desplazamiento en las columnas
 	 */

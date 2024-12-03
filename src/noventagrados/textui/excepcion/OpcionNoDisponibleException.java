@@ -11,7 +11,7 @@ package noventagrados.textui.excepcion;
 public class OpcionNoDisponibleException extends Exception {
 
 	/**
-	 * Serial Version UID
+	 * Serial Version UID.
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,7 @@ public class OpcionNoDisponibleException extends Exception {
 	/**
 	 * Constructor de la excepción.
 	 *
-	 * @param mensaje Mensaje de error.
+	 * @param mensaje Mensaje de error
 	 */
 	public OpcionNoDisponibleException(String mensaje) {
 		super(mensaje);
@@ -34,8 +34,8 @@ public class OpcionNoDisponibleException extends Exception {
 	/**
 	 * Constructor de la excepción.
 	 *
-	 * @param mensaje Mensaje de error.
-	 * @param causa   Causa de la excepción.
+	 * @param mensaje Mensaje de error
+	 * @param causa   Causa de la excepción
 	 */
 	public OpcionNoDisponibleException(String mensaje, Throwable causa) {
 		super(mensaje, causa);
@@ -44,7 +44,7 @@ public class OpcionNoDisponibleException extends Exception {
 	/**
 	 * Constructor de la excepción.
 	 *
-	 * @param causa Causa de la excepción.
+	 * @param causa Causa de la excepción
 	 */
 	public OpcionNoDisponibleException(Throwable causa) {
 		super(causa);

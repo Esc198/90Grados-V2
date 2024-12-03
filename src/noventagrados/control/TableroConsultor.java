@@ -27,7 +27,7 @@ import noventagrados.modelo.Pieza;
 public class TableroConsultor<T extends Tablero> {
 
 	/**
-	 * Tablero sobre el que se realizarán las consultas
+	 * Tablero sobre el que se realizarán las consultas.
 	 * 
 	 * @see noventagrados.modelo.Tablero
 	 */
@@ -36,7 +36,7 @@ public class TableroConsultor<T extends Tablero> {
 	
 
 	/**
-	 * Constructor de la clase TableroConsultor
+	 * Constructor de la clase TableroConsultor.
 	 *
 	 * @param tablero Tablero sobre el que se realizarán las consultas
 	 */
@@ -45,7 +45,7 @@ public class TableroConsultor<T extends Tablero> {
 	}
 
 	/**
-	 * Calcula el sentido de un movimiento entre dos coordenadas
+	 * Calcula el sentido de un movimiento entre dos coordenadas.
 	 *
 	 * @param origen  Coordenada de origen
 	 * @param destino Coordenada de destino
@@ -74,7 +74,7 @@ public class TableroConsultor<T extends Tablero> {
 	}
 
 	/**
-	 * Calcula la distancia en horizontal entre dos coordenadas
+	 * Calcula la distancia en horizontal entre dos coordenadas.
 	 *
 	 * @param origen  Coordenada de origen
 	 * @param destino Coordenada de destino
@@ -89,7 +89,7 @@ public class TableroConsultor<T extends Tablero> {
 	}
 
 	/**
-	 * Calcula la distancia en vertical entre dos coordenadas
+	 * Calcula la distancia en vertical entre dos coordenadas.
 	 *
 	 * @param origen  Coordenada de origen
 	 * @param destino Coordenada de destino
@@ -104,7 +104,7 @@ public class TableroConsultor<T extends Tablero> {
 	}
 
 	/**
-	 * Consulta el número de piezas de un tipo y color concretos en el tablero
+	 * Consulta el número de piezas de un tipo y color concretos en el tablero.
 	 *
 	 * @param tipoPieza El tipo de pieza a contar
 	 * @param color     El color de la pieza a contar
@@ -125,7 +125,7 @@ public class TableroConsultor<T extends Tablero> {
 	}
 
 	/**
-	 * Consulta el número de piezas en la misma fila que la coordenada
+	 * Consulta el número de piezas en la misma fila que la coordenada.
 	 *
 	 * @param coordenada Coordenada de la fila a consultar
 	 * @return Número de piezas en la fila
@@ -141,7 +141,7 @@ public class TableroConsultor<T extends Tablero> {
 	}
 
 	/**
-	 * Consulta el número de piezas en la misma columna que la coordenada
+	 * Consulta el número de piezas en la misma columna que la coordenada.
 	 *
 	 * @param coordenada Coordenada de la columna a consultar
 	 * @return Número de piezas en la columna
@@ -157,7 +157,7 @@ public class TableroConsultor<T extends Tablero> {
 	}
 
 	/**
-	 * Comprueba si hay una reina del color especifico en el centro del tablero
+	 * Comprueba si hay una reina del color especifico en el centro del tablero.
 	 *
 	 * @param color Color de la reina a comprobar
 	 * @return True si hay una reina del color especifico en el centro del tablero,
@@ -170,7 +170,7 @@ public class TableroConsultor<T extends Tablero> {
 	}
 
 	/**
-	 * Comprueba si hay una reina del color especifico en el tablero
+	 * Comprueba si hay una reina del color especifico en el tablero.
 	 *
 	 * @param color Color de la reina a comprobar
 	 * @return True si hay una reina del color especifico en el tablero, false en

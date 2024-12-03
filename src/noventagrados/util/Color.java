@@ -23,7 +23,7 @@ public enum Color {
 	NEGRO('N');
 
 	/**
-	 * Letra asignada al color
+	 * Letra asignada al color.
 	 */
 	private char letra;
 
@@ -37,7 +37,7 @@ public enum Color {
 	}
 
 	/**
-	 * Retorna el color contrario
+	 * Retorna el color contrario.
 	 * 
 	 * @return Color color contrario
 	 */
@@ -50,7 +50,7 @@ public enum Color {
 	}
 
 	/**
-	 * Devuelve la letra correspondiente al color (B o N)
+	 * Devuelve la letra correspondiente al color (B o N).
 	 * 
 	 * @return char caracter
 	 */

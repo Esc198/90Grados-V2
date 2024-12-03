@@ -89,7 +89,7 @@ public class NoventaGrados {
 
 	
 	/**
-	 * Metodo que se encarga de ejecutar el juego mientras dura la partida
+	 * Metodo que se encarga de ejecutar el juego mientras dura la partida.
 	 */
 	private static void bucle() {
 		boolean salir = false;
