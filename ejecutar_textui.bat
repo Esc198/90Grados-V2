@@ -11,11 +11,8 @@
 
 :: Ejecución del juego con comandos
 
-if "%1"=="" (
-    java -classpath .\bin noventagrados.textui.NoventaGrados
-) else (
-    java -classpath .\bin noventagrados.textui.NoventaGrados %1
-)
+
+java -classpath .\bin noventagrados.textui.NoventaGrados %1
 
 :: Pausar la consola para poder ver los resultados.
 pause

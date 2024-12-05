@@ -31,7 +31,7 @@ public enum TipoPieza {
      *
      * @param letra el carácter que representa el tipo de pieza
      */
-    TipoPieza(char letra) {
+    private TipoPieza(char letra) {
         caracter = letra;
     }
 

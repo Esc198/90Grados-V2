@@ -42,11 +42,9 @@ public class Arbitro {
 	private Tablero tablero;
 
 	/**
-<<<<<<< HEAD
 	 * Tamaño del tablero de juego.
 =======
 	 * El tamaño del tablero de juego.
->>>>>>> branch 'main' of https://github.com/Esc198/90Grados-V2.git
 	 */
 	private final int TAMAÑO_TABLERO = 7;
 	/**
@@ -307,6 +305,43 @@ public class Arbitro {
 	}
 
 	/**
+	 * Verifica si el movimiento es válido en el sentido especificado.
+	 *
+	 * @param consultaTablero El consultor del tablero.
+	 * @param origen          La coordenada de origen.
+	 * @param destino         La coordenada de destino.
+	 * @param sentido         El sentido del movimiento.
+	 * @return true si el movimiento es válido, false en caso contrario.
+	 */
+	private boolean esMovimientoEnSentidoValido(TableroConsultor<Tablero> consultaTablero, Coordenada origen,
+			Coordenada destino, Sentido sentido) {
+		boolean esValido = false;
+		int movimientoHorizontal = consultaTablero.consultarNumeroPiezasEnHorizontal(origen);
+		int movimientoVertical = consultaTablero.consultarNumeroPiezasEnVertical(origen);
+	
+		if ((sentido == Sentido.HORIZONTAL_E || sentido == Sentido.HORIZONTAL_O)
+				&& movimientoVertical == consultaTablero.consultarDistanciaEnHorizontal(origen, destino)) {
+			esValido = true;
+		} else if ((sentido == Sentido.VERTICAL_N || sentido == Sentido.VERTICAL_S)
+				&& movimientoHorizontal == consultaTablero.consultarDistanciaEnVertical(origen, destino)) {
+			esValido = true;
+		}
+		return esValido;
+	}
+
+	/**
+	 * Verifica si una coordenada está dentro del tablero.
+	 *
+	 * @param coordenada La coordenada a verificar.
+	 * @return true si la coordenada está dentro del tablero, false en caso
+	 *         contrario.
+	 */
+	private boolean estaDentroDelTablero(Coordenada coordenada) {
+		return coordenada.fila() >= 0 && coordenada.fila() < TAMAÑO_TABLERO && coordenada.columna() >= 0
+				&& coordenada.columna() < TAMAÑO_TABLERO;
+	}
+
+	/**
 	 * Verifica si una jugada es legal.
 	 *
 	 * @param jugada La jugada a verificar.
@@ -341,43 +376,6 @@ public class Arbitro {
 		}
 
 		return esLegal;
-	}
-
-	/**
-	 * Verifica si el movimiento es válido en el sentido especificado.
-	 *
-	 * @param consultaTablero El consultor del tablero.
-	 * @param origen          La coordenada de origen.
-	 * @param destino         La coordenada de destino.
-	 * @param sentido         El sentido del movimiento.
-	 * @return true si el movimiento es válido, false en caso contrario.
-	 */
-	private boolean esMovimientoEnSentidoValido(TableroConsultor<Tablero> consultaTablero, Coordenada origen,
-			Coordenada destino, Sentido sentido) {
-		boolean esValido = false;
-		int movimientoHorizontal = consultaTablero.consultarNumeroPiezasEnHorizontal(origen);
-		int movimientoVertical = consultaTablero.consultarNumeroPiezasEnVertical(origen);
-
-		if ((sentido == Sentido.HORIZONTAL_E || sentido == Sentido.HORIZONTAL_O)
-				&& movimientoVertical == consultaTablero.consultarDistanciaEnHorizontal(origen, destino)) {
-			esValido = true;
-		} else if ((sentido == Sentido.VERTICAL_N || sentido == Sentido.VERTICAL_S)
-				&& movimientoHorizontal == consultaTablero.consultarDistanciaEnVertical(origen, destino)) {
-			esValido = true;
-		}
-		return esValido;
-	}
-
-	/**
-	 * Verifica si una coordenada está dentro del tablero.
-	 *
-	 * @param coordenada La coordenada a verificar.
-	 * @return true si la coordenada está dentro del tablero, false en caso
-	 *         contrario.
-	 */
-	private boolean estaDentroDelTablero(Coordenada coordenada) {
-		return coordenada.fila() >= 0 && coordenada.fila() < TAMAÑO_TABLERO && coordenada.columna() >= 0
-				&& coordenada.columna() < TAMAÑO_TABLERO;
 	}
 
 	/**

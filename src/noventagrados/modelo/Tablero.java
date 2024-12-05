@@ -9,9 +9,6 @@ import noventagrados.util.Coordenada;
 /**
  * Representa un tablero de juego como una matriz de celdas, proporcionando
  * métodos para clonar el tablero, colocar piezas y consultar su estado.
- * <p>
- * Este tablero asume un tamaño fijo de 7x7 celdas.
- * </p>
  * 
  * @author <a href="esc1007@alu.ubu.es">Enrique Saiz</a>
  * @author <a href="mal1030@alu.ubu.es">Mario Alonso</a>
@@ -205,24 +202,28 @@ public class Tablero {
 		}
 	}
 
+	
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(celdas);
+		return Objects.hash(TAMAÑO_TABLERO, celdas);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null || getClass() != obj.getClass())
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
 			return false;
 		Tablero other = (Tablero) obj;
-		return Objects.equals(celdas, other.celdas);
+		return TAMAÑO_TABLERO == other.TAMAÑO_TABLERO && Objects.equals(celdas, other.celdas);
 	}
 
 	@Override
 	public String toString() {
-		return "Tablero [celdas=" + celdas + "]";
+		return "Tablero [celdas=" + celdas + ", TAMAÑO_TABLERO=" + TAMAÑO_TABLERO + "]";
 	}
 
 }

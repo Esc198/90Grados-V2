@@ -31,7 +31,7 @@ public class Caja {
 	 * @see noventagrados.util.Color
 	 */
 	private Color color;
-	
+
 	/**
 	 * Lista de piezas de la caja.
 	 * 
@@ -39,13 +39,12 @@ public class Caja {
 	 * @see java.util.ArrayList
 	 */
 	private List<Pieza> piezas;
-	
+
 	/**
 	 * Tamaño máximo de la caja.
 	 */
 	private final int TAMAÑO_CAJA = 7;
-	
-	
+
 	/**
 	 * Constructor de la clase Caja.
 	 *
@@ -133,12 +132,15 @@ public class Caja {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Objects.hash(color, piezas);
-		return result;
+		return Objects.hash(TAMAÑO_CAJA, color, piezas);
 	}
 
+	/**
+	 * Compara si dos cajas son iguales.
+	 *
+	 * @param obj Objeto a comparar.
+	 * @return true si son iguales, false en caso contrario.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -148,7 +150,7 @@ public class Caja {
 		if (getClass() != obj.getClass())
 			return false;
 		Caja other = (Caja) obj;
-		return color == other.color && Objects.equals(piezas, other.piezas);
+		return TAMAÑO_CAJA == other.TAMAÑO_CAJA && color == other.color && Objects.equals(piezas, other.piezas);
 	}
 
 	/**
@@ -158,7 +160,7 @@ public class Caja {
 	 */
 	@Override
 	public String toString() {
-		return "Caja [color=" + color + ", piezas=" + piezas + "]";
+		return "Caja [color=" + color + ", piezas=" + piezas + ", TAMAÑO_CAJA=" + TAMAÑO_CAJA + "]";
 	}
 
 }
