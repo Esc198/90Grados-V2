@@ -19,9 +19,9 @@ import noventagrados.modelo.Pieza;
  * 
  * @see noventagrados.modelo.Tablero
  * @see noventagrados.util.Color
- * @see noventagrados.util.Coordenada	
+ * @see noventagrados.util.Coordenada
  * @see noventagrados.util.Sentido
- * @see noventagrados.util.TipoPieza	
+ * @see noventagrados.util.TipoPieza
  * @see noventagrados.modelo.Pieza
  */
 public class TableroConsultor<T extends Tablero> {
@@ -32,8 +32,6 @@ public class TableroConsultor<T extends Tablero> {
 	 * @see noventagrados.modelo.Tablero
 	 */
 	private T tablero;
-
-	
 
 	/**
 	 * Constructor de la clase TableroConsultor.

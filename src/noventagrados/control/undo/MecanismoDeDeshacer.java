@@ -17,37 +17,36 @@ import java.util.Date;
  */
 public interface MecanismoDeDeshacer {
 
-	
-    /**
-     * Devuelve un clon en profundidad del árbitro en el estado actual.
-     * 
-     * @return Clon en profundidad del árbitro actual.
-     */
+	/**
+	 * Devuelve un clon en profundidad del árbitro en el estado actual.
+	 * 
+	 * @return Clon en profundidad del árbitro actual.
+	 */
 	public Arbitro consultarArbitroActual();
 
-    /**
-     * Devuelve el número de jugadas que pueden deshacerse hasta el momento.
-     * 
-     * @return Número de jugadas en el histórico.
-     */
-    public int consultarNumeroJugadasEnHistorico();
+	/**
+	 * Devuelve el número de jugadas que pueden deshacerse hasta el momento.
+	 * 
+	 * @return Número de jugadas en el histórico.
+	 */
+	public int consultarNumeroJugadasEnHistorico();
 
-    /**
-     * Deshace la última jugada realizada.
-     */
-    public void deshacerJugada();
+	/**
+	 * Deshace la última jugada realizada.
+	 */
+	public void deshacerJugada();
 
-    /**
-     * Guarda los efectos de la última jugada realizada.
-     * 
-     * @param jugada La última jugada realizada.
-     */
-    public void hacerJugada(Jugada jugada);
+	/**
+	 * Guarda los efectos de la última jugada realizada.
+	 * 
+	 * @param jugada La última jugada realizada.
+	 */
+	public void hacerJugada(Jugada jugada);
 
-    /**
-     * Devuelve la fecha en la que se inicializa el mecanismo de deshacer.
-     * 
-     * @return Fecha de inicio del mecanismo de deshacer.
-     */
-    public Date obtenerFechaInicio();
+	/**
+	 * Devuelve la fecha en la que se inicializa el mecanismo de deshacer.
+	 * 
+	 * @return Fecha de inicio del mecanismo de deshacer.
+	 */
+	public Date obtenerFechaInicio();
 }

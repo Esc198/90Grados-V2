@@ -10,16 +10,16 @@ package noventagrados.util;
  * 
  */
 public enum Color {
-	
+
 	/**
 	 * Valor que representa el color Blanco.
 	 */
-	BLANCO('B'), 
-	
+	BLANCO('B'),
+
 	/**
 	 * Valor que representa el color Negro.
 	 */
-	
+
 	NEGRO('N');
 
 	/**
@@ -28,7 +28,7 @@ public enum Color {
 	private char letra;
 
 	/**
-     * Constructor que asocia un carácter a cada tipo de pieza.
+	 * Constructor que asocia un carácter a cada tipo de pieza.
 	 * 
 	 * @param letra que se va a asignar
 	 */

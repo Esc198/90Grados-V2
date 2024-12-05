@@ -26,7 +26,7 @@ public class Pieza {
 	 * @see noventagrados.util.TipoPieza
 	 */
 	private TipoPieza tipo;
-	
+
 	/**
 	 * Color de la pieza.
 	 * 
@@ -64,7 +64,6 @@ public class Pieza {
 		return new Pieza(this.tipo, this.color);
 	}
 
-	
 	/**
 	 * Consulta el color de la pieza.
 	 * 

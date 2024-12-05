@@ -87,7 +87,6 @@ public class NoventaGrados {
 		}
 	}
 
-	
 	/**
 	 * Metodo que se encarga de ejecutar el juego mientras dura la partida.
 	 */

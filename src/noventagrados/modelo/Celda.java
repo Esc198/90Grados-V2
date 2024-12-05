@@ -19,14 +19,14 @@ import noventagrados.util.Coordenada;
  * 
  */
 public class Celda {
-	
+
 	/**
 	 * Coordenada de la celda.
 	 * 
 	 * @see noventagrados.util.Coordenada
 	 */
 	private Coordenada coordenada;
-	
+
 	/**
 	 * Pieza de la celda.
 	 * 
@@ -120,8 +120,6 @@ public class Celda {
 
 		return pieza == null;
 	}
-
-	
 
 	@Override
 	public int hashCode() {

@@ -42,9 +42,7 @@ public class Arbitro {
 	private Tablero tablero;
 
 	/**
-	 * Tamaño del tablero de juego.
-=======
-	 * El tamaño del tablero de juego.
+	 * Tamaño del tablero de juego. ======= El tamaño del tablero de juego.
 	 */
 	private final int TAMAÑO_TABLERO = 7;
 	/**
@@ -318,7 +316,7 @@ public class Arbitro {
 		boolean esValido = false;
 		int movimientoHorizontal = consultaTablero.consultarNumeroPiezasEnHorizontal(origen);
 		int movimientoVertical = consultaTablero.consultarNumeroPiezasEnVertical(origen);
-	
+
 		if ((sentido == Sentido.HORIZONTAL_E || sentido == Sentido.HORIZONTAL_O)
 				&& movimientoVertical == consultaTablero.consultarDistanciaEnHorizontal(origen, destino)) {
 			esValido = true;
@@ -438,6 +436,5 @@ public class Arbitro {
 				&& Objects.equals(cajaNegras, other.cajaNegras) && numeroJugada == other.numeroJugada
 				&& Objects.equals(tablero, other.tablero) && turno == other.turno;
 	}
-
 
 }

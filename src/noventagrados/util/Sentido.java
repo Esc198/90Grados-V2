@@ -14,18 +14,18 @@ public enum Sentido {
 	/**
 	 * Valor de la direccion arriba y izquierda(norte).
 	 */
-	VERTICAL_N(-1, 0), 
-	
+	VERTICAL_N(-1, 0),
+
 	/**
 	 * Valor de la direccion abajo y derecha(sur).
 	 */
-	VERTICAL_S(1, 0), 
-	
+	VERTICAL_S(1, 0),
+
 	/**
 	 * Valor de la direccion derecha(este).
 	 */
-	HORIZONTAL_E(0, 1), 
-	
+	HORIZONTAL_E(0, 1),
+
 	/**
 	 * Valor de la direccion izquierda(oeste).
 	 */
@@ -35,10 +35,10 @@ public enum Sentido {
 	 * Desplazamiento en filas.
 	 */
 	private int desplazamientoEnFilas;
-	
+
 	/**
 	 * Desplazamiento en columnas.
-     */
+	 */
 	private int desplazamientoEnColumnas;
 
 	/**

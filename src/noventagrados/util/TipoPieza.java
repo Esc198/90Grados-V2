@@ -14,34 +14,33 @@ public enum TipoPieza {
 	/**
 	 * Valor que representa el peón.
 	 */
-    PEON('P'),
-    
+	PEON('P'),
+
 	/**
 	 * Valor que representa la reina.
 	 */
-    REINA('R');
+	REINA('R');
 
 	/**
 	 * Carácter que representa el tipo de pieza.
 	 */
-    private char caracter;
+	private char caracter;
 
-    /**
-     * Constructor que asocia un carácter a cada tipo de pieza.
-     *
-     * @param letra el carácter que representa el tipo de pieza
-     */
-    private TipoPieza(char letra) {
-        caracter = letra;
-    }
+	/**
+	 * Constructor que asocia un carácter a cada tipo de pieza.
+	 *
+	 * @param letra el carácter que representa el tipo de pieza
+	 */
+	private TipoPieza(char letra) {
+		caracter = letra;
+	}
 
-    /**
-     * Devuelve el carácter perteneciente al tipo de pieza.
-     *
-     * @return el carácter que representa el tipo de pieza
-     */
-    public char toChar() {
-        return caracter;
-    }
+	/**
+	 * Devuelve el carácter perteneciente al tipo de pieza.
+	 *
+	 * @return el carácter que representa el tipo de pieza
+	 */
+	public char toChar() {
+		return caracter;
+	}
 }
-

@@ -10,7 +10,7 @@
 ::
 
 :: Documentar el juego
-javadoc -encoding UTF-8 -link https://docs.oracle.com/en/java/javase/22/docs/api/ -sourcepath ./src -author -d doc -subpackages noventagrados
+javadoc -encoding UTF-8 -private -link https://docs.oracle.com/en/java/javase/22/docs/api/ -sourcepath ./src -author -d doc -subpackages noventagrados
 
 :: Pausar la consola para poder ver los resultados.
 pause

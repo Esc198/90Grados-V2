@@ -30,14 +30,11 @@ public class Tablero {
 	 */
 	private List<List<Celda>> celdas;
 
-
 	/**
-	 * Tamaño del lateral del tablero (filas o columnas).
-=======
-	
-	/**
-	 * Tamaño del tablero.
->>>>>>> branch 'main' of https://github.com/Esc198/90Grados-V2.git
+	 * Tamaño del lateral del tablero (filas o columnas). =======
+	 * 
+	 * /** Tamaño del tablero. >>>>>>> branch 'main' of
+	 * https://github.com/Esc198/90Grados-V2.git
 	 */
 	private final int TAMAÑO_TABLERO = 7;
 
@@ -201,8 +198,6 @@ public class Tablero {
 			celdas.add(fila);
 		}
 	}
-
-	
 
 	@Override
 	public int hashCode() {

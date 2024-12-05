@@ -27,7 +27,7 @@ public abstract class MecanismoDeDeshacerAbstracto implements MecanismoDeDeshace
 	public MecanismoDeDeshacerAbstracto(Date date) {
 		this.fechaInicio = date;
 	}
-	
+
 	/**
 	 * Obtiene la fecha de inicio de la máquina del tiempo.
 	 *
@@ -37,7 +37,5 @@ public abstract class MecanismoDeDeshacerAbstracto implements MecanismoDeDeshace
 	public Date obtenerFechaInicio() {
 		return fechaInicio;
 	}
-	
-	
 
 }
