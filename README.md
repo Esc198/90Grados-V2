@@ -16,11 +16,11 @@ Para clonar y ejecutar este proyecto necesitas:
     ```
 3. Compilar el proyecto:
     ```bash
-    javac -d bin src/**/*.java
+    ./compilar.bat
     ```
 4. Ejecutar el proyecto:
     ```bash
-    java -cp bin MainClass
+    ./ejecutar_gui.bat
     ```
 
 ## Uso
